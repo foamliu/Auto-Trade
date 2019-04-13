@@ -1,5 +1,12 @@
 import tushare as ts
+from fbprophet import Prophet
 
-print(ts.get_hs300s())
+# print(ts.get_hs300s())
 
-print(ts.get_hist_data('600848')) #一次性获取全部日k线数据
+hist_data = ts.get_hist_data('600848')
+
+print(hist_data['close'])
+print(hist_data)
+
+m = Prophet()
+m.fit(hist_data)

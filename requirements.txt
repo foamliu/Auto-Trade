@@ -1,4 +1,6 @@
-prophet
+fbprophet
 tushare
 bs4
+Cython
+pystan
 xlrd
