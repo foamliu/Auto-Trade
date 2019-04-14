@@ -9,4 +9,4 @@ print(hist_data['close'])
 print(hist_data)
 
 m = Prophet()
-m.fit(hist_data)
+m.fit(hist_data['close'])
