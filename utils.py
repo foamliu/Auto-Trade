@@ -1,3 +1,4 @@
+import datetime
 import os
 
 
@@ -31,3 +32,12 @@ class suppress_stdout_stderr(object):
         # Close the null files
         os.close(self.null_fds[0])
         os.close(self.null_fds[1])
+
+
+def workdays(d, end, excluded=(6, 7)):
+    days = []
+    while d.date() <= end.date():
+        if d.isoweekday() not in excluded:
+            days.append(d.strftime('%Y-%m-%d'))
+        d += datetime.timedelta(days=1)
+    return days
