@@ -4,3 +4,4 @@ fbprophet
 tushare
 bs4
 xlrd
+tqdm
