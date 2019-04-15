@@ -1,6 +1,6 @@
+Cython
+pystan
 fbprophet
 tushare
 bs4
-Cython
-pystan
 xlrd
