@@ -18,14 +18,17 @@ if __name__ == '__main__':
 
     for code in data.keys():
         df = data[code]
+        if df is None:
+            print(code)
+            continue
         vol = volatility(df)
         code_vol_list.append((code, vol))
 
-    sorted_by_vol = sorted(data, key=lambda tup: tup[1], reverse=True)
+    sorted_by_vol = sorted(code_vol_list, key=lambda tup: tup[1], reverse=True)
 
     lines = []
     for tup in sorted_by_vol:
-        lines.append('{}\t{}\n'.format(code, vol))
+        lines.append('{}\t{}\n'.format(tup[0], tup[1]))
 
     with open('data/volatility.txt', 'w') as file:
         file.writelines(lines)
